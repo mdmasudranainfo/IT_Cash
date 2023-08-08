@@ -1,0 +1,13 @@
+.priview {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.courseBox:hover .priview {
+  opacity: 1;
+}
+.courseBox:hover .bestSeller {
+  opacity: 1;
+  z-index: 50;
+  border: none;
+}

@@ -1,0 +1,10 @@
+.MainHeader {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.349),
+      rgba(15, 14, 14, 0.377)
+    ),
+    url(../../assets/banner_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
