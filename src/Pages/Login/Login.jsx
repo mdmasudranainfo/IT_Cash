@@ -1,12 +1,34 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
+import { Link } from "react-router-dom";
+
+import { useState } from "react";
+import {
+  baseUrl,
+  getDataFor,
+  saveInCookie,
+  saveInLocal,
+  type,
+} from "../../utils/commonFunc";
 
 const Login = () => {
-  const { register, handleSubmit } = useForm()
-  const onSubmit = data => {
-    console.log(data)
-  }
+  const [loginData, setLoginData] = useState({});
+  const handleInput = (e) => {
+    setLoginData({
+      ...loginData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const crudType = type("POST", { type: "form", data: loginData });
+    const data = await getDataFor(`${baseUrl.url}/login`, crudType);
+    if (data.status_code === 200) {
+      saveInCookie("token", data.token);
+      saveInLocal("user", data.user);
+      alert("Login successfully");
+      // navigate("/");
+    }
+  };
 
   return (
     <div className="container mx-auto">
@@ -17,27 +39,29 @@ const Login = () => {
           </h1>
 
           <p className="mt-1  text-center">
-            Don't have an account?{' '}
+            Don't have an account?{" "}
             <Link to="/register" className="text-[#233d63] underline ">
               Sign Up!
             </Link>
           </p>
-          <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
+          <form onSubmit={handleLogin} className="mt-4">
             <input
-              {...register('number', { required: true })}
+              name="mobile"
+              onChange={handleInput}
               className="border-2 min-w-full p-3  focus:outline-none"
               placeholder="Mobile Number"
               type="text"
             />
             <input
-              {...register('password', { required: true })}
+              name="password"
+              onChange={handleInput}
               className="border-2 min-w-full p-3 mt-5  focus:outline-none"
               placeholder="Password"
               type="password"
             />
             <div className="mt-5 flex justify-between">
               <p className="flex items-center gap-2">
-                {' '}
+                {" "}
                 <input type="checkbox" className="checkbox" />
                 Remember Me
               </p>
@@ -52,7 +76,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
