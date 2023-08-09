@@ -7,7 +7,7 @@ const Register = () => {
     console.log(data)
   }
   return (
-    <div className="container mx-auto max-w-[1140px]">
+    <div className="container mx-auto max-w-[1140px] px-4">
       <h1 className="text-[#233d63] text-[18px] my-10 p-2 text-center bg-[#adb2bb4f] rounded-lg">
         {' '}
         Student Registration Form
@@ -15,12 +15,12 @@ const Register = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="">
         <div className="grid grid-cols-12">
           {/* Mobile Number* */}
-          <div className="col-span-6">
+          <div className="lg:col-span-6 col-span-12 mt-4">
             <p className="text-red-500">Mobile Number*</p>
-            <div className="flex md:items-center md:flex-row flex-col md:gap-10 gap-2 mt-3">
+            <div className="flex md:items-center md:flex-row flex-col lg:gap-10 gap-2 mt-3">
               <input
                 {...register('Number', { required: true })}
-                className="border-2 rounded-md  p-2  focus:outline-none w-[300px] max-w-full"
+                className="border-2 rounded-md  p-2  focus:outline-none md:w-[300px] max-w-full"
                 placeholder="Mobile Number"
                 type="text"
               />
@@ -35,12 +35,12 @@ const Register = () => {
           </div>
 
           {/* OTP No */}
-          <div className="col-span-6">
+          <div className="lg:col-span-6 col-span-12 mt-4">
             <p className="text-red-500">OTP No*</p>
-            <div className="flex md:flex-row flex-col md:items-center justify-between md:gap-10 gap-5 mt-3">
+            <div className="flex md:flex-row flex-col md:items-center lg:justify-between md:gap-10 gap-5 mt-3">
               <input
                 {...register('OTP', { required: true })}
-                className="border-2 rounded-md  p-2  focus:outline-none w-[300px] max-w-full"
+                className="border-2 rounded-md  p-2  focus:outline-none md:w-[300px] max-w-full"
                 placeholder="OTP No"
                 type="text"
               />
@@ -56,7 +56,7 @@ const Register = () => {
 
         <div className="grid grid-cols-12 gap-x-4">
           {/* Name */}
-          <div className="col-span-6">
+          <div className="md:col-span-6 col-span-12 mt-4">
             <p className="text-red-500">Name*</p>
             <div className=" mt-3">
               <input
@@ -69,7 +69,7 @@ const Register = () => {
           </div>
 
           {/* Email  */}
-          <div className="col-span-6">
+          <div className="md:col-span-6 col-span-12 mt-4">
             <p className="text-red-500">Email Address*</p>
             <div className=" mt-3">
               <input
@@ -82,7 +82,7 @@ const Register = () => {
           </div>
         </div>
         {/* Address */}
-        <div className="">
+        <div className="mt-4">
           <p className="text-red-500">Address</p>
           <div className=" mt-3">
             <input
@@ -93,9 +93,10 @@ const Register = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-12">
+
+        <div className="grid grid-cols-12 gap-x-4">
           {/* Father */}
-          <div className="col-span-6">
+          <div className="md:col-span-6 col-span-12 mt-4">
             <p className="">Father's Name</p>
             <div className=" mt-3">
               <input
@@ -107,7 +108,7 @@ const Register = () => {
             </div>
           </div>
           {/* Father's Contact No */}
-          <div className="col-span-6">
+          <div className="md:col-span-6 col-span-12 mt-4">
             <p className="">Father's Contact No</p>
             <div className=" mt-3">
               <input
@@ -119,62 +120,67 @@ const Register = () => {
             </div>
           </div>
         </div>
-        {/* Guardian Name */}
-        <div className="">
-          <p className="">Guardian Name</p>
-          <div className=" mt-3">
-            <input
-              {...register('GuardianName')}
-              className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
-              placeholder="Guardian Name"
-              type="text"
-            />
+
+        <div className=" grid grid-cols-12 gap-x-4">
+          {/* Guardian Name */}
+          <div className="  md:col-span-6 col-span-12 mt-4">
+            <p className="">Guardian Name</p>
+            <div className=" mt-3">
+              <input
+                {...register('GuardianName')}
+                className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
+                placeholder="Guardian Name"
+                type="text"
+              />
+            </div>
+          </div>
+          {/* Guardian Contact No */}
+          <div className=" md:col-span-6 col-span-12 mt-4">
+            <p className="">Guardian Contact No</p>
+            <div className=" mt-3">
+              <input
+                {...register('GuardianContact')}
+                className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
+                placeholder="01xxxxxxxxx"
+                type="text"
+              />
+            </div>
           </div>
         </div>
-        {/* Guardian Contact No */}
-        <div className="">
-          <p className="">Guardian Contact No</p>
-          <div className=" mt-3">
-            <input
-              {...register('GuardianContact')}
-              className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
-              placeholder="01xxxxxxxxx"
-              type="text"
-            />
+        <div className=" grid grid-cols-12 gap-x-4">
+          {/* District */}
+          <div className="  md:col-span-6 col-span-12 mt-4">
+            <p className="">District</p>
+            <div className=" mt-3">
+              <select
+                //   {...register('password', { required: true })}
+                className="border-2 rounded-md  p-2 focus:outline-none w-full max-w-full"
+                placeholder="01xxxxxxxxx"
+                type="text"
+              >
+                <option value="">bangladesh</option>
+                <option value="">bangladesh</option>
+              </select>
+            </div>
           </div>
-        </div>
-        {/* District */}
-        <div className="">
-          <p className="">District</p>
-          <div className=" mt-3">
-            <select
-              //   {...register('password', { required: true })}
-              className="border-2 rounded-md  p-2 focus:outline-none w-full max-w-full"
-              placeholder="01xxxxxxxxx"
-              type="text"
-            >
-              <option value="">bangladesh</option>
-              <option value="">bangladesh</option>
-            </select>
-          </div>
-        </div>
-        {/* Country */}
-        <div className="">
-          <p className="">Country</p>
-          <div className=" mt-3">
-            <select
-              //   {...register('password', { required: true })}
-              className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
-              placeholder="01xxxxxxxxx"
-              type="text"
-            >
-              <option value="">bangladesh</option>
-              <option value="">bangladesh</option>
-            </select>
+          {/* Country */}
+          <div className=" md:col-span-6 col-span-12 mt-4">
+            <p className="">Country</p>
+            <div className=" mt-3">
+              <select
+                //   {...register('password', { required: true })}
+                className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
+                placeholder="01xxxxxxxxx"
+                type="text"
+              >
+                <option value="">bangladesh</option>
+                <option value="">bangladesh</option>
+              </select>
+            </div>
           </div>
         </div>
         {/* Date of Birth */}
-        <div className="lg:col-span-2">
+        <div className="">
           <p className="text-red-500">Date of Birth*</p>
           <div>
             <input
@@ -186,33 +192,36 @@ const Register = () => {
             />
           </div>
         </div>
-        {/* Contact Person */}
-        <div className="">
-          <p className="text-red-500">Contact Person*</p>
-          <div className=" mt-3">
-            <input
-              {...register('ContactPerson', { required: true })}
-              className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
-              placeholder="Contact Person*"
-              type="text"
-            />
+
+        <div className="grid grid-cols-12 gap-x-4">
+          {/* Contact Person */}
+          <div className=" md:col-span-6 col-span-12 mt-4">
+            <p className="text-red-500">Contact Person*</p>
+            <div className=" mt-3">
+              <input
+                {...register('ContactPerson', { required: true })}
+                className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
+                placeholder="Contact Person*"
+                type="text"
+              />
+            </div>
           </div>
-        </div>
-        {/* NID No* */}
-        <div className="">
-          <p className="">NID No</p>
-          <div className=" mt-3">
-            <input
-              //   {...register('password', { required: true })}
-              className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
-              placeholder="NID No*"
-              type="text"
-            />
+          {/* NID No* */}
+          <div className=" md:col-span-6 col-span-12 mt-4">
+            <p className="">NID No</p>
+            <div className=" mt-3">
+              <input
+                //   {...register('password', { required: true })}
+                className="border-2 rounded-md  p-2  focus:outline-none w-full max-w-full"
+                placeholder="NID No*"
+                type="text"
+              />
+            </div>
           </div>
         </div>
         {/* Password */}
-        <div className="lg:col-span-2 grid lg:grid-cols-3 gap-3">
-          <div className="">
+        <div className="grid grid-cols-12 gap-x-4">
+          <div className=" md:col-span-4 col-span-12 mt-4">
             <p className="text-red-500">Password*</p>
             <div className=" mt-3">
               <input
@@ -224,7 +233,7 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className=" md:col-span-4 col-span-12 mt-4">
             <p className="text-red-500">Confirm Password*</p>
             <div className=" mt-3">
               <input
@@ -236,7 +245,7 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className=" md:col-span-4 col-span-12 mt-4">
             <p className="text-red-500">what is the result of 40 + 20 ?*</p>
             <div className=" mt-3">
               <input
@@ -251,7 +260,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="">
+        <div className=" mt-5">
           <input
             type="submit"
             className="btn w-[150px] max-w-full  bg-[#192675] capitalize  text-white hover:text-black ease-in duration-300 "
