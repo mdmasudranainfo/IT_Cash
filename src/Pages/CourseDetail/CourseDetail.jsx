@@ -19,8 +19,8 @@ const CourseDetail = () => {
   const [accordion, setAccordion] = useState(false)
   return (
     <div className="my-[50px]">
-      <div className="bg-[#E1E6EF] mx-5 rounded-md">
-        <div className="flex gap-3 container mx-auto py-4 text-[15px]">
+      <div className="bg-[#E1E6EF] md:mx-5 rounded-md">
+        <div className="flex gap-3 container mx-auto p-4 text-[15px]">
           <Link to="/">Home/</Link>
           <Link>Course/</Link>
           <Link className="text-[#7e7e7e]">
@@ -30,10 +30,10 @@ const CourseDetail = () => {
       </div>
 
       {/*  */}
-      <div className="container mx-auto mt-[50px]">
-        <div className="flex gap-10">
+      <div className="container mx-auto mt-[50px] ">
+        <div className="flex lg:flex-row flex-col gap-10 mx-4">
           {/*  */}
-          <div className="w-[70%]">
+          <div className="lg:w-[70%]">
             <h1 className="text-[26px] font-bol">
               Creative Graphics Design Course - Offline (Student)
             </h1>
@@ -114,7 +114,7 @@ const CourseDetail = () => {
 
           {/* cart */}
 
-          <div className="w-[25%] ">
+          <div className="lg:w-[25%] ">
             <div className="border p-5">
               <div className="flex justify-between">
                 <h2 className="text-[20px] text-[#333333]">Discount:</h2>

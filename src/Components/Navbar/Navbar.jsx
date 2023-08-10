@@ -50,11 +50,7 @@ const Navbar = () => {
     </>
   )
   return (
-    <div
-      className={`my-5 sticky top-0 z-50  overflow-hidden ${
-        navColor && 'bg-[#318DC5] '
-      }`}
-    >
+    <div className={`my-5 sticky top-0 z-50   ${navColor && 'bg-[#318DC5] '}`}>
       {/* navbar  */}
       <div>
         <div className="navbar container mx-auto ">

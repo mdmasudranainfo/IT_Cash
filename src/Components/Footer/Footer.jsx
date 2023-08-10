@@ -2,7 +2,7 @@ import { BsGooglePlay } from 'react-icons/bs'
 
 const Footer = () => {
   return (
-    <div>
+    <div className="mx-4">
       <div className="container mx-auto py-5">
         <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-10">
           {/* contact */}
