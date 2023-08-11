@@ -5,6 +5,9 @@ import Register from '../Pages/Register/Register'
 import Home from '../Pages/Home/Home'
 import CourseDetail from '../Pages/CourseDetail/CourseDetail'
 import DashboardLayout from '../Components/Layout/DashboardLayout'
+import ActiveCourses from '../Components/DashboardComponent/ActiveCourses/ActiveCourses'
+import JoinClass from '../Components/DashboardComponent/JoinClass/JoinClass'
+import HomeworkSubmit from '../Components/DashboardComponent/HomeworkSubmit/HomeworkSubmit'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,20 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <DashboardLayout />,
+    children: [
+      {
+        path: '/dashboard/activeclass',
+        element: <ActiveCourses />,
+      },
+      {
+        path: '/dashboard/joinclass',
+        element: <JoinClass />,
+      },
+      {
+        path: '/dashboard/homework',
+        element: <HomeworkSubmit />,
+      },
+    ],
   },
 ])
 export default router
