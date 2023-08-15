@@ -6,7 +6,8 @@ import { AiFillSetting, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { Collapse } from 'react-collapse'
 import { useState } from 'react'
 
-const DashboardMenu = () => {
+// eslint-disable-next-line react/prop-types
+const DashboardMenu = ({ setOpenMenu }) => {
   const [Operation, setOperation] = useState()
   return (
     <div className="text-[#979696]">
@@ -17,7 +18,7 @@ const DashboardMenu = () => {
 
       {/* menu items */}
       <div className="px-4">
-        <div className="">
+        <div onClick={() => setOpenMenu(false)} className="">
           <NavLink
             to="/dashboard/activeclass"
             className={({ isActive }) =>
@@ -40,7 +41,7 @@ const DashboardMenu = () => {
           </div>
 
           <Collapse isOpened={Operation}>
-            <div className=" ml-6 mt-1">
+            <div onClick={() => setOpenMenu(false)} className=" ml-6 mt-1 z-50">
               <NavLink
                 className={({ isActive }) =>
                   isActive
@@ -53,7 +54,7 @@ const DashboardMenu = () => {
               </NavLink>
             </div>
 
-            <div className=" ml-6 mt-1">
+            <div onClick={() => setOpenMenu(false)} className=" ml-6 mt-1">
               <NavLink
                 className={({ isActive }) =>
                   isActive

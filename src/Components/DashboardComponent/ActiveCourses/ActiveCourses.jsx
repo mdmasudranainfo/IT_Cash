@@ -13,7 +13,7 @@ const ActiveCourses = () => {
       </div>
 
       {/* table start*/}
-      <div className="overflow-x-auto mt-4">
+      <div className="overflow-x-auto mt-4 z-10">
         <table className="table">
           {/* head */}
           <thead>
