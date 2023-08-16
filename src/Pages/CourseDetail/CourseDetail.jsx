@@ -15,7 +15,9 @@ import { Collapse } from 'react-collapse'
 import { useState } from 'react'
 import { BsFillLightningChargeFill } from 'react-icons/bs'
 
-const CourseDetail = () => {
+const CourseDetail = ({id}) => {
+console.log("id", id)
+
   const [accordion, setAccordion] = useState(false)
   return (
     <div className="my-[50px]">

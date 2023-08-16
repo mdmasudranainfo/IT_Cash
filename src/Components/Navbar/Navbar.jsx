@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/Pasted image (1).png'
 
 const Navbar = () => {
   const [navColor, setNavColor] = useState(false)
@@ -92,7 +92,6 @@ const Navbar = () => {
                 src={logo}
                 alt=""
               />
-              <span className="text-3xl">IT CASH</span>
             </Link>
           </div>
           <div className="navbar-end hidden lg:flex">
